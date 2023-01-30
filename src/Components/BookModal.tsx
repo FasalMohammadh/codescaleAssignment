@@ -10,6 +10,7 @@ interface BookData {
   amazon_product_url: string | null;
   book_image: string;
   category: string;
+  rank: number;
 }
 
 interface BookModalProps {
@@ -59,19 +60,21 @@ const BookModal = ({ open, onClose, bookData }: BookModalProps) => {
         <div className='flex flex-col'>
           <div className='grid gap-x-10 h-fit gap-y-2 lg:grid-cols-[1fr_auto]'>
             <p className='text-xl'>Title</p>
-            <p className='text-xl'>{bookData.title}</p>
+            <p className='lg:text-xl'>{bookData.title}</p>
             <p className='text-xl'>Label Name</p>
-            <p className='text-xl'>{bookData.category}</p>
+            <p className='lg:text-xl'>{bookData.category}</p>
             <p className='text-xl'>Description</p>
-            <p className='text-xl'>{description}</p>
+            <p className='lg:text-xl'>{description}</p>
             <p className='text-xl'>Author</p>
-            <p className='text-xl'>{bookData.author}</p>
+            <p className='lg:text-xl'>{bookData.author}</p>
             <p className='text-xl'>Price</p>
-            <p className='text-xl'>{price}</p>
+            <p className='lg:text-xl'>{price}</p>
             <p className='text-xl'>Publisher</p>
-            <p className='text-xl'>{bookData.publisher}</p>
+            <p className='lg:text-xl'>{bookData.publisher}</p>
             <p className='text-xl'>Age Group</p>
-            <p className='text-xl'>{ageGroup}</p>
+            <p className='lg:text-xl'>{ageGroup}</p>
+            <p className='text-xl'>Rank</p>
+            <p className='lg:text-xl'>{bookData.rank}</p>
           </div>
           {bookData.amazon_product_url && (
             <a

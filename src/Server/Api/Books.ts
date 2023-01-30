@@ -1,7 +1,5 @@
 import axios from '@/Server/Axios';
 
-import { BookProps } from '@/Components/Book';
-
 interface GetBooksResponse {
   status: string;
   copyright: string;
@@ -74,6 +72,7 @@ interface BookToReturn {
   publisher: string;
   age_group: string;
   isbn: string;
+  rank: number;
 }
 
 async function getBestSellingBooks() {
@@ -95,6 +94,7 @@ async function getBestSellingBooks() {
             publisher: book.publisher,
             age_group: book.age_group,
             isbn: book.primary_isbn13,
+            rank: book.rank,
           };
           preVal.push(bookToReturn);
         });
